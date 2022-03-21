@@ -1,4 +1,21 @@
-// Assignment code here
+// Global var
+var arraySplit = ""; 
+var exitApplication = false; 
+var userInput = ""; 
+var finalPassword = ""; 
+var displayPassword = ""; 
+
+var pCriteria = {
+  lowercase: { indexNumber: 0 , criteria: "abcdefghijklmnopqrstuvwxyz"
+  },
+  uppercase: { indexNumber: 1, criteria: "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  },
+  numeric: { indexNumber: 2, criteria: "0123456789"
+  },
+  symbols: { indexNumber: 3, criteria: "!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~"
+  }
+}
+
 
 
 // Get references to the #generate element
