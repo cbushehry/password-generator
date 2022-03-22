@@ -18,6 +18,29 @@ var pCriteria = {
 
 
 
+//function to generate password criteria
+var generatePassword = function() {
+
+  arraySplit = "";
+  exitApplication = false;
+  userInput = ""; 
+  finalPassword = ""; 
+  displayPassword = ""; 
+
+  window.alert("The criteria for password generator are lowercase, uppercase, numeric, and/or special characters.");
+
+
+
+
+
+
+
+
+}
+
+
+
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
