@@ -1,7 +1,7 @@
 # PASSWORD GENERATOR
 
 ## 1. Description
-Application where the user can create a random password based on criteria they select. THis project was built using HTML, CSS and JavaScript
+Application where the user can create a random password based on criteria they select. This project was built using HTML, CSS and JavaScript
 
 DEPLOYMENT:
  [DIRECT LINK](https://cbushehry.github.io/password-generator/) | [GITHUB REPOSITORY](https://github.com/cbushehry/password-generator)
