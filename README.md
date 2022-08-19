@@ -10,6 +10,8 @@ DEPLOYMENT:
  * Generate a random password between 8 and 128 characters
  * Criteria includes lowercase, uppercase, numeric, or special characters
 
+ ![password generator homepage](assets/images/pw-generator.PNG)
+
 ## 3. Credits / Contact
 This application was made by Cameron Bushehry
 
