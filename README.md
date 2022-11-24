@@ -12,7 +12,12 @@ DEPLOYMENT:
 
  ![password generator homepage](assets/images/pw-generator.PNG)
 
-## 3. Credits / Contact
+## 3. Tech Stack
+ * HTML
+ * CSS 
+ * JavaScript
+
+## 4. Credits / Contact
 This application was made by Cameron Bushehry
 
 Contact Me: c.bushehry@gmail.com
