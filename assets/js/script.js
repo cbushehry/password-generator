@@ -1,4 +1,4 @@
- // Global var
+// Global variables
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 var numbers = '0123456789';
@@ -6,10 +6,9 @@ var symbols = '!#$%&*+/:;<=>?@^';
 var passwordLength = 0;
 var passwordPool = '';
 
-
-// Get references to the #generate element
+// Get references to the elements
 var generateBtn = document.querySelector("#generate");
-
+var copyBtn = document.querySelector("#copy"); // New button for copying password
 
 // Write password to the #password input
 function writePassword() {
@@ -19,62 +18,62 @@ function writePassword() {
 
   passwordText.value = password;
 
-   // resets passwordLength and passWordPool so new password and criteria can be generated
-   passwordLength = 0;
-   passwordPool = '';
+  // Resets passwordLength and passwordPool for new generation
+  passwordLength = 0;
+  passwordPool = '';
 }
 
-var prompts = function () {
-  
-  // Asks for a password length and loops if incorrect criteria is entered
+function prompts() {
+  // Asks for password length and criteria, building passwordPool
   while (!passwordLength || passwordLength < 8 || passwordLength > 128) {
-    passwordLength = window.prompt('How long do you want your password to be? (please enter 8-128)');
+    passwordLength = prompt('How long do you want your password to be? (please enter 8-128)');
     passwordLength = parseInt(passwordLength);
 
     if (!passwordLength || passwordLength < 8 || passwordLength > 128) {
-      window.alert("Please enter a number between 8 and 128");
+      alert("Please enter a number between 8 and 128");
     }
   }
 
-  // Asks what should be included in the password and loops if none are selected
   while (!passwordPool) {
-    var includeUpper = window.confirm('Do you want to include upper case letters in the password? (Confirm for yes, cancel for no)');
-    if (includeUpper) {
+    if (confirm('Do you want to include upper case letters in the password?')) {
       passwordPool = passwordPool.concat(upperCase);
     }
 
-    var includeLower = window.confirm('Do you want to include lower case letters in the password? (Confirm for yes, cancel for no)');
-    if (includeLower) {
+    if (confirm('Do you want to include lower case letters in the password?')) {
       passwordPool = passwordPool.concat(lowerCase);
     }
 
-    var includeNumbers = window.confirm('Do you want to include numbers in the password? (Confirm for yes, cancel for no)');
-    if (includeNumbers) {
+    if (confirm('Do you want to include numbers in the password?')) {
       passwordPool = passwordPool.concat(numbers);
     }
 
-    var includeSymbols = window.confirm('Do you wnat to include symbols in the password? (Confirm for yes, cancel for no)');
-    if (includeSymbols) {
+    if (confirm('Do you want to include symbols in the password?')) {
       passwordPool = passwordPool.concat(symbols);
     }
 
     if (!passwordPool) {
-      window.alert("Please select at least one criteria for the password");
+      alert("Please select at least one criteria for the password");
     }
   }
 }
 
-var generatePassword = function() {
+function generatePassword() {
   var password = '';
-  // loops for length entered by user and concatenates random passwordPool to password var
   for (i = 0; i < passwordLength; i++) {
     var rand = Math.floor(Math.random() * passwordPool.length);
     var nextRand = passwordPool.charAt(rand);
     password = password.concat(nextRand);
   }
-  window.alert("Your password is!: " + password);
-  return password;
+  return password; // Returns the generated password directly
 }
 
-// Add event listener to generate button
+// Event listener for the generate button
 generateBtn.addEventListener("click", writePassword);
+
+// Event listener for the copy to clipboard button
+copyBtn.addEventListener("click", function() {
+  var passwordText = document.querySelector("#password");
+  passwordText.select(); // Select the password text
+  document.execCommand("copy"); // Copy the selected text
+  alert("Password copied to clipboard!"); // Optional feedback
+});
