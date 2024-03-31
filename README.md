@@ -10,6 +10,7 @@ Application where the user can create a random password based on criteria they s
 ## Features
  * Generate a random password between 8 and 128 characters
  * Criteria includes lowercase, uppercase, numeric, or special characters
+ * Added a button to copy the generated password to your clipboard
 
 ## Credits / Contact
 This application was made by Cameron Bushehry
