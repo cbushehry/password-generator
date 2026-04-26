@@ -59,8 +59,10 @@ function prompts() {
 
 function generatePassword() {
   let password = '';
+  const randomValues = new Uint32Array(passwordLength);
+  crypto.getRandomValues(randomValues);
   for (i = 0; i < passwordLength; i++) {
-    const rand = Math.floor(Math.random() * passwordPool.length);
+    const rand = randomValues[i] % passwordPool.length;
     const nextRand = passwordPool.charAt(rand);
     password = password.concat(nextRand);
   }
