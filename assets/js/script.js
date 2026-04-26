@@ -71,9 +71,8 @@ function generatePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // Event listener for the copy to clipboard button
-copyBtn.addEventListener("click", function() {
+copyBtn.addEventListener("click", async function() {
   const passwordText = document.querySelector("#password");
-  passwordText.select(); // Select the password text
-  document.execCommand("copy"); // Copy the selected text
+  await navigator.clipboard.writeText(passwordText.value);
   alert("Password copied to clipboard!"); // Optional feedback
 });
