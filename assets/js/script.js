@@ -1,20 +1,20 @@
 // Global variables
-var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
-var numbers = '0123456789';
-var symbols = '!#$%&*+/:;<=>?@^';
-var passwordLength = 0;
-var passwordPool = '';
+const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+const numbers = '0123456789';
+const symbols = '!#$%&*+/:;<=>?@^';
+let passwordLength = 0;
+let passwordPool = '';
 
 // Get references to the elements
-var generateBtn = document.querySelector("#generate");
-var copyBtn = document.querySelector("#copy"); // New button for copying password
+const generateBtn = document.querySelector("#generate");
+const copyBtn = document.querySelector("#copy"); // New button for copying password
 
 // Write password to the #password input
 function writePassword() {
   prompts();
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  const password = generatePassword();
+  const passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
@@ -58,10 +58,10 @@ function prompts() {
 }
 
 function generatePassword() {
-  var password = '';
+  let password = '';
   for (i = 0; i < passwordLength; i++) {
-    var rand = Math.floor(Math.random() * passwordPool.length);
-    var nextRand = passwordPool.charAt(rand);
+    const rand = Math.floor(Math.random() * passwordPool.length);
+    const nextRand = passwordPool.charAt(rand);
     password = password.concat(nextRand);
   }
   return password; // Returns the generated password directly
@@ -72,7 +72,7 @@ generateBtn.addEventListener("click", writePassword);
 
 // Event listener for the copy to clipboard button
 copyBtn.addEventListener("click", function() {
-  var passwordText = document.querySelector("#password");
+  const passwordText = document.querySelector("#password");
   passwordText.select(); // Select the password text
   document.execCommand("copy"); // Copy the selected text
   alert("Password copied to clipboard!"); // Optional feedback
