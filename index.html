@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Password Generator</title>
+    <title>Password Generator</title>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
 
@@ -14,10 +14,6 @@
       </header>
 
       <div class="card">
-        <div class="card-header">
-          <h2> </h2>
-        </div>
-
         <div class="card-body">
           <textarea
             readonly
@@ -26,7 +22,21 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
-        
+
+        <div class="card-options">
+          <div class="length-control">
+            <label for="length-slider">Length: <span id="length-value">16</span></label>
+            <input type="range" id="length-slider" min="8" max="128" value="16" />
+          </div>
+          <div class="checkboxes">
+            <label><input type="checkbox" id="include-uppercase" checked /> Uppercase (A–Z)</label>
+            <label><input type="checkbox" id="include-lowercase" checked /> Lowercase (a–z)</label>
+            <label><input type="checkbox" id="include-numbers" checked /> Numbers (0–9)</label>
+            <label><input type="checkbox" id="include-symbols" /> Symbols (!#$…)</label>
+          </div>
+          <p id="error-msg" class="error-msg hidden">Please select at least one character type.</p>
+        </div>
+
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
           <button id="copy" class="btn">Copy Password</button>
