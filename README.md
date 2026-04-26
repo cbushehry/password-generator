@@ -1,6 +1,6 @@
 # PASSWORD GENERATOR
 
-Application where the user can create a random password based on criteria they select. This project was built using HTML, CSS and JavaScript
+Application where the user can create a random password based on criteria selected via an in-page form. This project was built using HTML, CSS and JavaScript
 
 <img src="assets/images/pw-generator.png" width="43%" height="auto"/>
 
@@ -8,9 +8,10 @@ Application where the user can create a random password based on criteria they s
  [DIRECT LINK](https://cbushehry.github.io/password-generator/) | [GITHUB REPOSITORY](https://github.com/cbushehry/password-generator)
 
 ## Features
- * Generate a random password between 8 and 128 characters
- * Criteria includes lowercase, uppercase, numeric, or special characters
- * Added a button to copy the generated password to your clipboard
+ * Generate a random password between 8 and 128 characters using a length slider
+ * Select criteria via checkboxes: uppercase, lowercase, numeric, or special characters
+ * Passwords generated using the Web Crypto API (`crypto.getRandomValues`) for cryptographic randomness
+ * Copy the generated password to your clipboard with one click
 
 ## Credits / Contact
 This application was made by Cameron Bushehry
